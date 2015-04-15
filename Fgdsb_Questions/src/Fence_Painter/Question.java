@@ -27,8 +27,6 @@ public class Question {
     	}
     	int[] twoSame = new int[n];
     	int[] twoDiff = new int[n];
-    	twoSame[0] = k;
-    	twoDiff[0] = k;
     	twoSame[1] = k * 1;
     	twoDiff[1] = k * (k - 1);
     	for (int i = 2; i < n; i++) {
