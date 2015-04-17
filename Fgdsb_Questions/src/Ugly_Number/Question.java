@@ -25,7 +25,7 @@ public class Question {
     	}
     	int[] res = new int[k + 1];
     	res[1] = 1;
-    	int last2 = 1; // last2表示当前res[i]左边的某个位置，对于此位置上的数，再乘以2就会比res[i-1]大的最大的最右边的那个位置
+    	int last2 = 1; // last2表示当前res[i]左边的某个位置，对于此位置上的数，再乘以2就会比res[i-1]大的最大的值最小的那个位置
     	int last3 = 1;
     	int last5 = 1;
     	for (int i = 2; i <= k; i++) {
