@@ -21,9 +21,10 @@ public class Question {
 	//http://www.fgdsb.com/2015/01/06/two-difference/
     public int[] two_dif(int[] A, int target) {
     	int[] res = {-1, -1};
-    	if (A == null || A.length == 0) {
+    	if (A == null || A.length == 0 || target == 0) {
     		return res;
     	}
+    	target = Math.abs(target);
     	int len = A.length;
     	int p1 = 0;
     	int p2 = 1;
