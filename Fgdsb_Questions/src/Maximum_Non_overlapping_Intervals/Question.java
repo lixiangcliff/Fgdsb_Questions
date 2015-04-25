@@ -1,0 +1,33 @@
+package Maximum_Non_overlapping_Intervals;
+
+public class Question {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	/**
+	 * Given a list of intervals of time, find maximum number of non-overlapping intervals.
+	 * For example:
+	 * Given [0,2], [1,4], [3,5], the result would be 2.
+	 */
+	
+    public int max_intervals(Interval[] intervals) {
+    	return 0;
+    }
+	
+
+}
+
+class Interval {
+    public int begin = 0, end = 0;
+    public Interval() {}
+    public Interval(int b, int e) {
+        begin = b;
+        end = e;
+    }
+}
