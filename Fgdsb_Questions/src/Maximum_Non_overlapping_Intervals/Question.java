@@ -1,5 +1,10 @@
 package Maximum_Non_overlapping_Intervals;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+
 public class Question {
 
 	/**
@@ -17,7 +22,19 @@ public class Question {
 	 */
 	
     public int max_intervals(Interval[] intervals) {
+    	Comparator<Interval> comp = new Comparator<Interval>() {
+    		@Override
+    		public int compare(Interval i1, Interval i2) {
+    			if (i1.begin == i2.begin) {
+    				return i1.end - i2.end;
+    			} else {
+    				return i1.begin - i2.begin;
+    			}
+    		}
+    	};
+    	Arrays.sort(intervals, comp);
     	return 0;
+    	
     }
 	
 
