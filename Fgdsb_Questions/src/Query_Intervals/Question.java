@@ -40,7 +40,7 @@ public class Question {
 		data.add(i9);
 		Intervals ins = new Intervals(data);
 		ins.preprocess();
-		System.out.println(ins.query(3));
+		System.out.println(ins.query(2));
 
 	}
 	
@@ -97,7 +97,6 @@ class Intervals {
     }
 
     public boolean query(int time) {
-    	preprocess();
 /*    	for (Interval it : intervals) {
     		System.out.println("begin: " + it.begin +" ; " + "end: " + it.end);
     	}*/
