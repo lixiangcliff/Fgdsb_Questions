@@ -21,6 +21,7 @@ public class Question {
 	 * Given [0,2], [1,4], [3,5], the result would be 2.
 	 */
 	
+	//http://www.glassdoor.com/Interview/given-an-array-of-intervals-return-max-number-of-non-overlapping-intervals-QTN_636638.htm
     public int max_intervals(Interval[] intervals) {
     	Comparator<Interval> comp = new Comparator<Interval>() {
     		@Override

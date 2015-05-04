@@ -8,6 +8,7 @@ import java.util.List;
 
 
 
+
 public class Question {
 
 	/**
@@ -40,7 +41,7 @@ public class Question {
 		data.add(i9);
 		Intervals ins = new Intervals(data);
 		ins.preprocess();
-		System.out.println(ins.query(2));
+		System.out.println(ins.query(3));
 
 	}
 	
@@ -61,19 +62,25 @@ public class Question {
 }
 
 
+
 //to merge intervals
 class Intervals {
     public Intervals(List<Interval> data) {
     	intervals = new ArrayList<Interval>();
-    	for (Interval i : data) {
-    		intervals.add(i);
+    	if (data != null && data.size() != 0) {
+    		for (Interval i : data) {
+        		intervals.add(i);
+        	}
     	}
     }
 
     public void preprocess() {
+    	if (intervals == null || intervals.size() == 0) {
+    		return;
+    	}
     	//merge interval from leetcode
 		List<Interval> result = new ArrayList<Interval>();
-		Comparator<Interval> comp = new Comparator<Interval>() { //【注】学习comparator的写法
+		Comparator<Interval> comp = new Comparator<Interval>() { 
 			@Override
 			public int compare(Interval i1, Interval i2) {
 				if (i1.begin == i2.begin) { // 
@@ -93,14 +100,27 @@ class Intervals {
 			}
 		}
 		result.add(pre); //
-    	intervals = result;
+		intervals.clear();
+    	intervals.addAll(result);
     }
 
     public boolean query(int time) {
+    	int idx = 0;
+    	while (idx < intervals.size()) {
+    		if (intervals.get(idx).begin <= time && time <= intervals.get(idx).end ) {
+    			return true;
+    		}
+    		idx++;
+    	}
+    	return false;
+    	
+    	//binary search
 /*    	for (Interval it : intervals) {
     		System.out.println("begin: " + it.begin +" ; " + "end: " + it.end);
     	}*/
-    	int l = 0;
+    	
+    	
+    	/*int l = 0;
     	int r = intervals.size() - 1;
     	while (l + 1 < r) {
     		int m = l + (r - l) / 2;
@@ -125,7 +145,9 @@ class Intervals {
     		return true;
     	} else {
     		return false;
-    	}
+    	}*/
+    	
+    	
     }
     
     List<Interval> intervals;
