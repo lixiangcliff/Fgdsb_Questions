@@ -28,14 +28,14 @@ public class Question {
     	}
     	Arrays.sort(coins);
     	int pos = 0;
-    	int[] count = {0};
-    	helper(coins, count, pos, target);
-    	return count[0];
+    	int[] ways = {0};
+    	helper(coins, ways, pos, target);
+    	return ways[0];
     }
     
-    private void helper(int[] coins, int[] count, int pos, int target) {
+    private void helper(int[] coins, int[] ways, int pos, int target) {
     	if (target == 0) {
-    		count[0]++;
+    		ways[0]++;
     	}
     	if (target < coins[pos]) {
     		return;
@@ -44,7 +44,7 @@ public class Question {
     		if (i > pos && coins[i - 1] == coins[i]) {
     			continue;
     		}
-    		helper(coins, count, i, target - coins[i]);
+    		helper(coins, ways, i, target - coins[i]);
     	}
     }
     
