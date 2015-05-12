@@ -10,7 +10,32 @@ public class Question {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		ArrayList<Integer> alist = new ArrayList<Integer>();
+		alist.add(1);
+		alist.add(2);
+		alist.add(3);
+		Iterator it = alist.iterator();
+		PeekIterator pit = new PeekIterator(it);
+		System.out.println(pit.hasNext());
+		System.out.println(pit.peek());
+		System.out.println(pit.next());
+		System.out.println(pit.hasNext());
+		System.out.println(pit.peek());
+		System.out.println(pit.next());
+		System.out.println(pit.peek());
+		System.out.println(pit.peek());
+		System.out.println(pit.peek());
+		System.out.println(pit.next());
+		System.out.println(pit.hasNext());
+		//System.out.println(pit.peek());
+		//System.out.println(pit.next());
+/*		System.out.println(it.hasNext());
+		System.out.println(it.next());
+		System.out.println(it.hasNext());
+		System.out.println(it.next());
+		System.out.println(it.next());
+		System.out.println(it.hasNext());
+		System.out.println(it.next());*/
 	}
 	
 	/**
@@ -24,12 +49,14 @@ public class Question {
 
 //http://www.fgdsb.com/2015/01/25/peek-iterator/
 //http://stackoverflow.com/questions/5849154/can-we-write-our-own-iterator-in-java
+//will not compile. should try c++ version according to the answer on Mac
 class PeekIterator {
 	private Iterator it;
-	private ArrayList<Integer> list = new ArrayList<Integer>(); // store return value of next()
+	private ArrayList<Integer> list; // store return value of next()
 	
     public PeekIterator(Iterator it) {
     	this.it = it;
+    	list = new ArrayList<Integer>(); 
     }
     
     public int peek() {
