@@ -1,5 +1,8 @@
 package Longest_Increasing_Sequence_in_Matrix;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Question {
 
 	/**
@@ -31,5 +34,11 @@ public class Question {
 		 */
 
 	}
+	
+	//http://www.fgdsb.com/2015/01/07/longest-increasing-sequence-in-matrix/
+    public List<Integer> longest_seq(int[][] mat) {
+    	List<Integer> res = new ArrayList<Integer>();
+    	return res; 
+    }
 
 }
